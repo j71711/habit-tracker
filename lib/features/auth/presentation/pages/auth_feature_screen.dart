@@ -22,12 +22,11 @@ class AuthFeatureScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     final authCubit = context.read<AuthCubit>();
-    final name = useTextEditingController();
-    final email = useTextEditingController();
-    final dOBCon = useTextEditingController();
-    final password = useTextEditingController();
+    final TextEditingController name = useTextEditingController();
+    final TextEditingController email = useTextEditingController();
+    final TextEditingController dOBCon = useTextEditingController();
+    final TextEditingController password = useTextEditingController();
     final keyField = GlobalKey<FormState>();
 
     return Scaffold(
@@ -35,7 +34,7 @@ class AuthFeatureScreen extends HookWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        toolbarHeight: 20,
+        toolbarHeight: 20, // Reduced to make room for content
       ),
       body: BlocListener<AuthCubit, AuthState>(
         listener: (context, state) {
@@ -92,6 +91,7 @@ class AuthFeatureScreen extends HookWidget {
                               current is AuthInitialState,
                           builder: (context, state) {
                             return Column(
+                              spacing: 15,
                               children: [
                                 Text(
                                   state.signIn
@@ -111,20 +111,19 @@ class AuthFeatureScreen extends HookWidget {
                                     label: 'Name',
                                     controller: name,
                                     textInputType: .name,
-                                    textInputAction: .next,
                                     validator: state.signIn
                                         ? null
                                         : Validators.validateFullName,
                                   ),
                                 ),
-                                Gap(16),
+
                                 CustomTextField(
                                   label: 'Email',
                                   controller: email,
                                   textInputType: .emailAddress,
                                   validator: Validators.validateEmail,
                                 ),
- Gap(16),
+
                                 FadeAnimatedContainer(
                                   fade: state.signIn,
                                   widget: DatePickerField(
@@ -133,42 +132,36 @@ class AuthFeatureScreen extends HookWidget {
                                     isRequired: !state.signIn,
                                   ),
                                 ),
- Gap(16),
+
                                 CustomTextField(
                                   label: 'Password',
                                   controller: password,
                                   validator: Validators.validatePassword,
                                 ),
 
-                                const Gap(16),
-
-                                SizedBox(
-                                  width: double.infinity,
-                                  height: 55,
-                                  child: FilledButton(
-                                    onPressed: () =>
-                                        keyField.currentState!.validate()
-                                        ? state.signIn
-                                              ? authCubit.signIn(
-                                                  email.text,
-                                                  password.text,
-                                                )
-                                              : authCubit.signUp(
-                                                  name: name.text,
-                                                  email: email.text,
-                                                  dateOfBirth: DateTime.parse(
-                                                    dOBCon.text,
-                                                  ),
-                                                  password: password.text,
-                                                )
-                                        : null,
-                                    child: Text(
-                                      state.signIn ? 'Sign In' : 'Sign Up',
-                                      style: TextStyle(
-                                        color: Theme.of(
-                                          context,
-                                        ).colorScheme.onSurface,
-                                      ),
+                                FilledButton(
+                                  onPressed: () =>
+                                      keyField.currentState!.validate()
+                                      ? state.signIn
+                                            ? authCubit.signIn(
+                                                email.text,
+                                                password.text,
+                                              )
+                                            : authCubit.signUp(
+                                                name: name.text,
+                                                email: email.text,
+                                                dateOfBirth: DateTime.parse(
+                                                  dOBCon.text,
+                                                ),
+                                                password: password.text,
+                                              )
+                                      : null,
+                                  child: Text(
+                                    state.signIn ? 'Sign In' : 'Sign Up',
+                                    style: TextStyle(
+                                      color: Theme.of(
+                                        context,
+                                      ).colorScheme.onSurface,
                                     ),
                                   ),
                                 ),
@@ -181,8 +174,7 @@ class AuthFeatureScreen extends HookWidget {
                       const Gap(20),
 
                       BlocBuilder<AuthCubit, AuthState>(
-                        buildWhen: (previous, current) =>
-                            current is AuthInitialState,
+                        buildWhen: (previous, current) => current is AuthInitialState,
                         builder: (context, state) {
                           return SignSwitchWidget(
                             signIn: state.signIn,
