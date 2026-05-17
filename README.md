@@ -80,7 +80,7 @@ lib/
 
 <img width="502" height="820" alt="Screenshot 1447-11-30 at 8 49 19 am" src="https://github.com/user-attachments/assets/eba9b24a-ae92-4050-b2ad-a153b8a50778" />
 <img width="502" height="820" alt="Screenshot 1447-11-30 at 8 49 50 am" src="https://github.com/user-attachments/assets/cc06350d-4ffd-4573-a81a-417c992b23be" />
-<img width="642" height="820" alt="WhatsApp Image 1447-11-03 at 22 39 18" src="https://github.com/user-attachments/assets/6cd6abab-4247-4fec-bfca-4d41561f9968" />
+<img width="642" height="1820" alt="WhatsApp Image 1447-11-03 at 22 39 18" src="https://github.com/user-attachments/assets/6cd6abab-4247-4fec-bfca-4d41561f9968" />
 
 
 
