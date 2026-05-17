@@ -77,12 +77,11 @@ lib/
 ---
 
 ## 📱 App Screens
-<p align="center">
-  <img width="200" alt="WhatsApp Image 2026-04-19 at 3 14 24 AM" src="https://github.com/user-attachments/assets/b5116421-b623-453c-942a-bebcf00189a6" />
-<img width="200" alt="WhatsApp Image 2026-04-19 at 3 14 25 AM" src="https://github.com/user-attachments/assets/2f8a0a36-1824-4d73-a242-080eb4db69ee" />
-<img width="200"  alt="WhatsApp Image 2026-04-19 at 3 14 25 AM (1)" src="https://github.com/user-attachments/assets/905e6701-fb8a-48ec-bb25-156fadcd9821" />
-<img width="200"  alt="WhatsApp Image 2026-04-19 at 3 14 25 AM (2)" src="https://github.com/user-attachments/assets/377b25ff-90ec-49b8-aa4c-3c76225bc16c" />
-</p>
+
+<img width="502" height="820" alt="Screenshot 1447-11-30 at 8 49 19 am" src="https://github.com/user-attachments/assets/eba9b24a-ae92-4050-b2ad-a153b8a50778" />
+<img width="502" height="820" alt="Screenshot 1447-11-30 at 8 49 50 am" src="https://github.com/user-attachments/assets/cc06350d-4ffd-4573-a81a-417c992b23be" />
+<img width="642" height="1280" alt="WhatsApp Image 1447-11-03 at 22 39 18" src="https://github.com/user-attachments/assets/6cd6abab-4247-4fec-bfca-4d41561f9968" />
+
 
 
 
